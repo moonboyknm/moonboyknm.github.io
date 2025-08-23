@@ -15,7 +15,7 @@ particlesJS("particles-js", {
       }
     },
     "color": {
-      "value": "#00ffcc" // Particle color
+      "value": "#ff4141" // Particle color - UPDATED TO RED
     },
     "shape": {
       "type": "circle",
@@ -50,7 +50,7 @@ particlesJS("particles-js", {
     "line_linked": {
       "enable": true,
       "distance": 150,
-      "color": "#00ffcc", // Line color
+      "color": "#ff4141", // Line color - UPDATED TO RED
       "opacity": 0.4,
       "width": 1
     },
@@ -74,7 +74,7 @@ particlesJS("particles-js", {
     "events": {
       "onhover": {
         "enable": true,
-        "mode": "grab" // 'grab' or 'repulse'
+        "mode": "grab"
       },
       "onclick": {
         "enable": true,

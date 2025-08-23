@@ -1,112 +1,272 @@
-// Initialize Animate On Scroll (AOS)
-AOS.init({
-    duration: 1000, // values from 0 to 3000, with step 50ms
-    once: true,     // whether animation should happen only once - while scrolling down
-});
+/* --- CSS Variables for Easy Theming --- */
+:root {
+    --bg-color: #111111;
+    --primary-color: #ff4141; /* A sharp, modern red */
+    --text-color: #e0e0e0;
+    --card-bg-color: #1a1a1a;
+    --border-color: #2e2e2e;
+    --font-family: 'Roboto Mono', monospace;
+}
 
-// Initialize Particles.js
-particlesJS("particles-js", {
-  "particles": {
-    "number": {
-      "value": 100, // Number of particles
-      "density": {
-        "enable": true,
-        "value_area": 800
-      }
-    },
-    "color": {
-      "value": "#ff4141" // Particle color - UPDATED TO RED
-    },
-    "shape": {
-      "type": "circle",
-      "stroke": {
-        "width": 0,
-        "color": "#000000"
-      },
-      "polygon": {
-        "nb_sides": 5
-      }
-    },
-    "opacity": {
-      "value": 0.5,
-      "random": false,
-      "anim": {
-        "enable": false,
-        "speed": 1,
-        "opacity_min": 0.1,
-        "sync": false
-      }
-    },
-    "size": {
-      "value": 3,
-      "random": true,
-      "anim": {
-        "enable": false,
-        "speed": 40,
-        "size_min": 0.1,
-        "sync": false
-      }
-    },
-    "line_linked": {
-      "enable": true,
-      "distance": 150,
-      "color": "#ff4141", // Line color - UPDATED TO RED
-      "opacity": 0.4,
-      "width": 1
-    },
-    "move": {
-      "enable": true,
-      "speed": 2, // Speed of particles
-      "direction": "none",
-      "random": false,
-      "straight": false,
-      "out_mode": "out",
-      "bounce": false,
-      "attract": {
-        "enable": false,
-        "rotateX": 600,
-        "rotateY": 1200
-      }
+/* --- General Styles --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    line-height: 1.6;
+}
+
+/* --- Particle Background --- */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* --- Navigation & Header --- */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(17, 17, 17, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Hero Section --- */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.hero-content .subtitle {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-weight: 300;
+    max-width: 600px;
+}
+
+.social-links a {
+    color: var(--text-color);
+    font-size: 2rem;
+    margin: 0 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+/* --- General Section Styling --- */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+}
+
+.container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+/* --- Experience Section --- */
+.experience-item h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.experience-details {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* --- Skills Section --- */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-item {
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.skill-item:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+
+
+/* --- Project Section --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 65, 65, 0.1);
+}
+
+.project-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.project-links {
+    margin-top: 1.5rem;
+}
+
+.project-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-right: 1.5rem;
+    font-weight: 700;
+}
+
+.project-links a:hover {
+    color: var(--primary-color);
+}
+
+.project-links i {
+    margin-left: 0.5rem;
+}
+
+/* --- Contact Section --- */
+#contact p {
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
     }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": true,
-        "mode": "grab"
-      },
-      "onclick": {
-        "enable": true,
-        "mode": "push"
-      },
-      "resize": true
-    },
-    "modes": {
-      "grab": {
-        "distance": 140,
-        "line_linked": {
-          "opacity": 1
-        }
-      },
-      "bubble": {
-        "distance": 400,
-        "size": 40,
-        "duration": 2,
-        "opacity": 8,
-        "speed": 3
-      },
-      "repulse": {
-        "distance": 200,
-        "duration": 0.4
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
-      }
+
+    .hero-content .subtitle {
+        font-size: 1rem;
     }
-  },
-  "retina_detect": true
-});
+
+    nav ul {
+        display: none;
+    }
+
+    .container {
+        padding: 4rem 1.5rem;
+    }
+}
