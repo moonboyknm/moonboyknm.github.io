@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kratik Mudgal | Blog</title>
+
+    <!-- Link to the stylesheet in the parent directory (../) -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- All other head elements from your original file for consistency -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Custom CSS to style the "Coming Soon" message -->
+    <style>
+        .coming-soon-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 2rem 0; /* Add padding for nav and on small screens */
+        }
+        .coming-soon-container h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .coming-soon-container p {
+            font-size: 1.2rem;
+            max-width: 500px;
+        }
+
+        /* Responsive font size for the heading */
+        @media (max-width: 768px) {
+            .coming-soon-container h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- This is the particle background from your original page -->
+    <div id="particles-js"></div>
+
+    <header>
+        <nav>
+            <!-- IMPORTANT: Links are updated to point back to the homepage -->
+            <div class="logo"><a href="/" style="text-decoration: none; color: var(--primary-color);">KM</a></div>
+            <ul>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#experience">Experience</a></li>
+                <li><a href="/#skills">Skills</a></li>
+                <li><a href="/#projects">Projects</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- The main content for this page -->
+        <section class="coming-soon-container">
+            <h1 data-aos="fade-down">Blog Coming Soon</h1>
+            <p data-aos="fade-up" data-aos-delay="200">
+                I'm currently working on some exciting articles and project write-ups. Please check back later!
+            </p>
+        </section>
+    </main>
+
+    <!-- Re-using your footer, z-index helps ensure it's above the particles background -->
+    <footer style="position: relative; z-index: 1;">
+        <p>&copy; 2025 Kratik Mudgal.</p>
+    </footer>
+
+    <!-- Scripts from your original page, linked from the parent directory (../) -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../script.js"></script>
+
+</body>
+</html>
