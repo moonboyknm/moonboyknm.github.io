@@ -1,72 +1,61 @@
-// Initialize Animate On Scroll (AOS)
-AOS.init({
-    duration: 1000, 
-    once: true,     
-});
-
-// Initialize Particles.js
 particlesJS("particles-js", {
   "particles": {
     "number": {
-      "value": 100, 
+      "value": 100,
       "density": {
         "enable": true,
         "value_area": 800
       }
     },
     "color": {
-      "value": "#ff4141" // Particle color - RED
+      "value": "#ff4141"
     },
     "shape": {
-      "type": "circle",
+      "type": "polygon",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 6
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
     },
     "opacity": {
-      "value": 0.5,
-      "random": false
+      "value": 0.6,
+      "random": true
     },
     "size": {
-      "value": 3,
+      "value": 5,
       "random": true
     },
     "line_linked": {
-      "enable": true,
-      "distance": 150,
-      "color": "#ff4141", // Line color - RED
-      "opacity": 0.4,
-      "width": 1
+      "enable": false
     },
     "move": {
       "enable": true,
       "speed": 2,
-      "direction": "none",
+      "direction": "bottom",
       "random": false,
-      "straight": false,
+      "straight": true,
       "out_mode": "out",
+      "bounce": false
     }
   },
   "interactivity": {
     "detect_on": "canvas",
     "events": {
       "onhover": {
-        "enable": true,
-        "mode": "grab"
+        "enable": false
       },
       "onclick": {
-        "enable": true,
-        "mode": "push"
+        "enable": false
       },
       "resize": true
-    },
-    "modes": {
-      "grab": {
-        "distance": 140,
-        "line_linked": {
-          "opacity": 1
-        }
-      },
-      "push": {
-        "particles_nb": 4
-      },
     }
   },
   "retina_detect": true
